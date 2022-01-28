@@ -16,45 +16,69 @@ namespace gudeatm
         {
             InitializeComponent();
         }
-        bool x = false;
+        //bool x = false;
+        bool result = false;
         public static int i=0;
         public void giris()
         {
-            for (i = 0; i < KullaniciKayit.i; i++)
+            #region Diziler ile Giriş Döngüsü
+            //for (i = 0; i < KullaniciKayit.i; i++)
+            //{
+            //    if (KullaniciKayit.userName[i].ToString() == txtGirisUsername.Text && KullaniciKayit.sifre[i].ToString() == txtGirisSifre.Text)
+            //    {
+            //         x = true;
+            //        MessageBox.Show("başarılı");
+            //        Gude_Arayuz f3 = new Gude_Arayuz();
+            //        f3.ShowDialog();
+            //       atmgiris f2 = new atmgiris();
+            //        f2.Close();
+            //        break;
+
+
+            //    }
+            //    else
+            //    {
+            //        x = false;
+            //    }
+
+
+            //}
+
+
+            //if (x == false)
+            //{
+            //    MessageBox.Show("Hatalı giriş");
+            //}
+            #endregion
+
+           
+            for (int i = 0; i < KullaniciKayit.userName.Count; i++)
             {
-                if (KullaniciKayit.userName[i].ToString() == txtGirisUsername.Text && KullaniciKayit.sifre[i].ToString() == txtGirisSifre.Text)
+                if (KullaniciKayit.userName[i] == txtGirisUsername.Text && KullaniciKayit.sifre[i] == txtGirisSifre.Text)
                 {
-                     x = true;
+                    result = true;
                     MessageBox.Show("başarılı");
                     Gude_Arayuz f3 = new Gude_Arayuz();
                     f3.ShowDialog();
-                   atmgiris f2 = new atmgiris();
+                    atmgiris f2 = new atmgiris();
                     f2.Close();
                     break;
-                    
-                    
                 }
-                else
+                    else 
                 {
-                    x = false;
+                    result = false;
                 }
-               
-                
+              
             }
-           
-            
-            if (x == false)
+            if (result == false)
             {
-                MessageBox.Show("Hatalı giriş");
+                MessageBox.Show("Hatalı Giriş");
             }
 
         }
         private void button1_Click(object sender, EventArgs e)
         {
-         
-
-            giris();
-            
+            giris();   
         }
     }
 }

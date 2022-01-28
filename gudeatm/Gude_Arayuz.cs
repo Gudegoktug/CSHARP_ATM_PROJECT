@@ -90,8 +90,9 @@ namespace gudeatm
                 {
                     KullaniciKayit.bakiye[z] += Convert.ToInt32(txtMiktar.Text);
                     KullaniciKayit.bakiye[atmgiris.i] -= Convert.ToInt32(txtMiktar.Text);
-                    MessageBox.Show(KullaniciKayit.userName[z] + KullaniciKayit.bakiye[z]+ KullaniciKayit.userName[atmgiris.i] + KullaniciKayit.bakiye[atmgiris.i]);
-                   
+                    //MessageBox.Show(KullaniciKayit.userName[z] + KullaniciKayit.bakiye[z]+ KullaniciKayit.userName[atmgiris.i] + KullaniciKayit.bakiye[atmgiris.i]);
+                    MessageBox.Show("Havale başarıyla gerçekleşti Göderilen hesap bilgileri \n "+ KullaniciKayit.name[z]+"\n"+KullaniciKayit.surname[z]+"\n"+KullaniciKayit.tc[z]+"\n"+ KullaniciKayit.birthdate[z]);
+
                 }
                
             }

@@ -17,14 +17,24 @@ namespace gudeatm
             InitializeComponent();
         }
        
-        public static string[] name = new string[100];
-        public static string[] surname = new string[100];
-        public static string[] birthdate = new string[100];
-        public static string[] tc = new string[100];
-        public static string[] userName = new string[100];
-        public static string[] sifre = new string[100];
-        public static string[] cinsiyet = new string[100];  
-        public static int[] bakiye = new int[100];
+        //public static string[] name = new string[100];
+        //public static string[] surname = new string[100];
+        //public static string[] birthdate = new string[100];
+        //public static string[] tc = new string[100];
+        //public static string[] userName = new string[100];
+        //public static string[] sifre = new string[100];
+        //public static string[] cinsiyet = new string[100];  
+        //public static int[] bakiye = new int[100];
+
+        public static List<string> name = new List<string>();
+        public static List<string> surname = new List<string>();
+        public static List<string> birthdate = new List<string>();
+        public static List<string> tc = new List<string>();
+        public static List<string> userName = new List<string>();
+        public static List<string> sifre = new List<string>();
+        public static List<string> cinsiyet = new List<string>();
+        public static List<int> bakiye=new List<int>();
+
         public static int i = 0;
         public void kullaniciKayit()
         {
@@ -71,42 +81,63 @@ namespace gudeatm
        
         private void btnKayit_Click(object sender, EventArgs e)
         {
+            #region Diziler ile Kayit
             //kullaniciKayit();
+            //try
+            //{
+            //    if (i >= 0 && i < 100 )
+            //    {
+
+            //        name[i] = txtName.Text;
+            //        surname[i] = txtSurname.Text;
+            //        birthdate[i] = mskBirthDate.Text;
+            //        tc[i] = mskTc.Text;
+            //        userName[i] = txtUsername.Text;
+            //        sifre[i] = txtSifre.Text;
+            //        bakiye[i] = 10000;
+
+
+            //        if (rdoErkek.Checked == true)
+            //        {
+            //            cinsiyet[i] = "erkek";
+            //        }
+            //        else if(rdoKadin.Checked ==true)
+            //        {
+            //            cinsiyet[i] = "kadın";
+            //        }
+            //        else
+            //        {
+            //            cinsiyet[i] = "lpgli";
+            //        }
+
+            //    }
+            //    MessageBox.Show("Başarılı kayıt");
+            //    i++;
+
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Hata..!!");
+            //}
+            #endregion
             try
             {
-                if (i >= 0 && i < 100 )
-                {
-                    name[i] = txtName.Text;
-                    surname[i] = txtSurname.Text;
-                    birthdate[i] = mskBirthDate.Text;
-                    tc[i] = mskTc.Text;
-                    userName[i] = txtUsername.Text;
-                    sifre[i] = txtSifre.Text;
-                    bakiye[i] = 10000;
-                   
-               
-                    if (rdoErkek.Checked == true)
-                    {
-                        cinsiyet[i] = "erkek";
-                    }
-                    else if(rdoKadin.Checked ==true)
-                    {
-                        cinsiyet[i] = "kadın";
-                    }
-                    else
-                    {
-                        cinsiyet[i] = "lpgli";
-                    }
-                   
-                }
-                MessageBox.Show("Başarılı kayıt");
-                i++;
-                
+                name.Add(txtName.Text);
+                surname.Add(txtSurname.Text);
+                birthdate.Add(mskBirthDate.Text);
+                tc.Add(mskTc.Text);
+                userName.Add(txtUsername.Text);
+                sifre.Add(txtSifre.Text);
+                bakiye.Add(10000);
+                MessageBox.Show("Başarılı Kayıt");
+              
             }
-            catch
+            catch 
             {
-                MessageBox.Show("Hata..!!");
+
+                MessageBox.Show("HATA");
             }
+           
 
         }
 
